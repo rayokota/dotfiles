@@ -17,7 +17,7 @@ NONE=$'\033[m'
 
 alias cp='cp -i'
 alias mv='mv -i'
-alias rm='rm -i'
+alias rmi='rm -i'
 alias h='history'
 alias psa='ps auxwww'
 alias jumpssh='ssh -A -t jumphost-001.sjc1.yammer.com ssh $@' 
@@ -87,12 +87,22 @@ PS1='\033]0;${title}\u@\h:`tty`>${mydir}\007\n\
 \[${GREY}\])\[${GREEN}\]\
 \[${GREEN}\]$\[${GREEN}\] '
 
-export PATH=${PATH}:/Applications/IntelliJ\ IDEA\ 11.app/Contents/MacOS:/Applications/MacVim.app/Contents/MacOS
+export PATH="${PATH}:/Applications/IntelliJ\ IDEA\ 11.app/Contents/MacOS"
+export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
+export PATH="${PATH}:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
+export PATH="${PATH}:/Library/Haskell/bin:"
 
 export DYLD_LIBRARY_PATH=~/third-party/javacv-bin/javacv-macosx-x86_64/com/googlecode/javacv/cpp/macosx-x86_64
 #export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 
-
+complete -F get_dropwizard_commands dropwizard
+get_dropwizard_commands () {
+    if [ -z $2 ] ; then
+        COMPREPLY=(`dropwizard help -c`)
+    else
+        COMPREPLY=(`dropwizard help -c $2`)
+    fi
+}
 
