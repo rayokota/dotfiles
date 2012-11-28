@@ -24,6 +24,12 @@ alias jumpssh='ssh -A -t jumphost-001.sjc1.yammer.com ssh $@'
 alias jumppdsh='ssh -A -t jumphost-001.sjc1.yammer.com pdsh $@' 
 alias mvnv='mvn versions:display-plugin-updates versions:display-dependency-updates'
 
+shopt -s histappend
+HISTFILESIZE=1000000
+HISTSIZE=10000000
+HISTCONTROL=ignoreboth
+HISTIGNORE='ls:bg:fg:history'
+
 mvim() { 
   if [[ $1 == /* ]]
   then 
@@ -75,6 +81,7 @@ git_status() {
 
 #executed just before prompt
 PROMPT_COMMAND='exitStatus=$?;mydir=$(_get_path);gitbr=$(git_branch);gitst=$(git_status)'
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
  
 PS1='\033]0;${title}\u@\h:`tty`>${mydir}\007\n\
 \[${GREY}\]\[${CYAN}\]\A\[${GREY}\] \
@@ -90,7 +97,8 @@ PS1='\033]0;${title}\u@\h:`tty`>${mydir}\007\n\
 export PATH="${PATH}:/Applications/IntelliJ\ IDEA\ 11.app/Contents/MacOS"
 export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
 export PATH="${PATH}:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
-export PATH="${PATH}:/Library/Haskell/bin:"
+export PATH="${PATH}:/Library/Haskell/bin"
+export PATH="${PATH}:~/code/dropwizard-gen/bin"
 
 export DYLD_LIBRARY_PATH=~/third-party/javacv-bin/javacv-macosx-x86_64/com/googlecode/javacv/cpp/macosx-x86_64
 #export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
