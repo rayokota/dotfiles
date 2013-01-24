@@ -20,8 +20,8 @@ alias mv='mv -i'
 alias rmi='rm -i'
 alias h='history'
 alias psa='ps auxwww'
-alias jumpssh='ssh -A -t jumphost-001.sjc1.yammer.com ssh $@' 
-alias jumppdsh='ssh -A -t jumphost-001.sjc1.yammer.com pdsh $@' 
+alias jumpssh='ssh -A -t jumphost-001.int.yammer.com ssh $@' 
+alias jumppdsh='ssh -A -t jumphost-001.int.yammer.com pdsh $@' 
 alias mvnv='mvn versions:display-plugin-updates versions:display-dependency-updates'
 
 shopt -s histappend
