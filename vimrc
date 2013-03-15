@@ -148,6 +148,8 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
+" JSON pretty printer
+map <leader>jt <Esc>:%!json_xs -f json -t json-pretty<CR>
 
 "------------------------------------------------------------
 set t_Co=256
