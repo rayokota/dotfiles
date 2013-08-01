@@ -82,7 +82,7 @@ git_status() {
 
 #executed just before prompt
 PROMPT_COMMAND='exitStatus=$?;mydir=$(_get_path);gitbr=$(git_branch);gitst=$(git_status)'
-PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+PROMPT_COMMAND="$PROMPT_COMMAND;history -a"  # execute history after capturing exitStatus
  
 PS1='\033]0;${title}\u@\h:`tty`>${mydir}\007\n\
 \[${GREY}\]\[${CYAN}\]\A\[${GREY}\] \
