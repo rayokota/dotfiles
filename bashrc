@@ -119,3 +119,5 @@ get_dropwizard_commands () {
     fi
 }
 
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
