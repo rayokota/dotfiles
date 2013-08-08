@@ -31,6 +31,10 @@ HISTSIZE=10000000
 HISTCONTROL=ignoreboth
 HISTIGNORE='ls:bg:fg:history'
 
+ssht() {
+  ssh $* -t 'tmux a || tmux || /bin/bash'
+}
+
 mvim() { 
   if [[ $1 == /* ]]
   then 
