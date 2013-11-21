@@ -24,6 +24,7 @@ alias jumpssh='ssh -A -t jumphost-001.int.yammer.com ssh $@'
 alias jumppdsh='ssh -A -t jumphost-001.int.yammer.com pdsh $@' 
 alias mvnv='mvn versions:display-plugin-updates versions:display-dependency-updates'
 alias json_pp='json_xs -f json -t json-pretty'
+alias isodate='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 
 shopt -s histappend
 HISTFILESIZE=1000000
@@ -105,9 +106,9 @@ export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
 export PATH="${PATH}:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
 export PATH="${PATH}:/Library/Haskell/bin"
 export PATH="${PATH}:~/code/dropwizard-gen/bin"
-export PATH="${PATH}:~/third-party/db-derby-10.9.1.0-bin/bin"
+export PATH="${PATH}:~/third-party/db-derby-10.10.1.1-bin/bin"
+export PATH="/usr/local/bin:$PATH"
 
-export DYLD_LIBRARY_PATH=~/third-party/javacv-bin/javacv-macosx-x86_64/com/googlecode/javacv/cpp/macosx-x86_64
 #export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
@@ -125,3 +126,5 @@ get_dropwizard_commands () {
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
