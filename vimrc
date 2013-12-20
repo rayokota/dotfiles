@@ -129,6 +129,8 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+autocmd FileType javascript,ruby setlocal shiftwidth=2 softtabstop=2 expandtab
+
 " Indentation settings for using hard tabs for indent. Display tabs as
 " two characters wide.
 "set shiftwidth=2
