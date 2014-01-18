@@ -100,20 +100,12 @@ PS1='\033]0;${title}\u@\h:`tty`>${mydir}\007\n\
 \[${GREY}\])\[${GREEN}\]\
 \[${GREEN}\]$\[${GREEN}\] '
 
-export PATH="/Library/PostgreSQL/9.1/bin:${PATH}"
-export PATH="${PATH}:/Applications/IntelliJ\ IDEA\ 11.app/Contents/MacOS"
-export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
-export PATH="${PATH}:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
-export PATH="${PATH}:/Library/Haskell/bin"
-export PATH="${PATH}:~/code/dropwizard-gen/bin"
-export PATH="${PATH}:~/third-party/db-derby-10.10.1.1-bin/bin"
-export PATH="/usr/local/bin:$PATH"
-
 #export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 export JRUBY_OPTS="--1.8"
 export MAVEN_OPTS=-Xmx512m
+export GOPATH="$HOME/gocode"
 
 complete -F get_dropwizard_commands dropwizard
 get_dropwizard_commands () {
@@ -124,7 +116,15 @@ get_dropwizard_commands () {
     fi
 }
 
-### Added by the Heroku Toolbelt
+export PATH="/Library/PostgreSQL/9.1/bin:${PATH}"
+export PATH="${PATH}:/Applications/IntelliJ\ IDEA\ 11.app/Contents/MacOS"
+export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
+export PATH="${PATH}:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
+export PATH="${PATH}:/Library/Haskell/bin"
+export PATH="${PATH}:~/code/dropwizard-gen/bin"
+export PATH="${PATH}:~/third-party/db-derby-10.10.1.1-bin/bin"
+export PATH="${PATH}:$GOPATH/bin"
+export PATH="${PATH}:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
