@@ -100,13 +100,14 @@ PS1='\033]0;${title}\u@\h:`tty`>${mydir}\007\n\
 \[${GREY}\])\[${GREEN}\]\
 \[${GREEN}\]$\[${GREEN}\] '
 
-#export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home
-export PYTHONPATH="/Users/ryokota/.local/lib/aws/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+#export JAVA_HOME=/usr/libexec/java_home -v 1.7
+export JAVA_HOME=/usr/libexec/java_home
+export PYTHONPATH="$HOME/.local/lib/aws/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 export JRUBY_OPTS="--1.9"
 export MAVEN_OPTS=-Xmx512m
 export GOROOT="/usr/local/go"
 export GOPATH="$HOME/gocode"
+export SBCL_HOME="/usr/local/lib/sbcl"
 
 complete -F get_dropwizard_commands dropwizard
 get_dropwizard_commands () {
@@ -126,8 +127,16 @@ export PATH="${PATH}:~/code/dropwizard-gen/bin"
 export PATH="${PATH}:~/third-party/db-derby-10.10.1.1-bin/bin"
 export PATH="${PATH}:$HOME/.local/lib/aws/bin"
 export PATH="${PATH}:$GOPATH/bin"
+export PATH="${PATH}:$HOME/.shelly/bin"
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/mysql/bin:$PATH"
+export PATH="/usr/local/php5/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.rvm/bin:${PATH}" # Add RVM to PATH for scripting
 export PATH="/Applications/Vagrant/bin:${PATH}"
 
+# OPAM configuration
+. $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
