@@ -1,0 +1,40 @@
+Compression yes
+ 
+# Allow connection sharing for faster login
+ControlMaster auto
+ControlPersist 4h
+ControlPath /tmp/ssh_%h_%p_%r
+ 
+Host github.com
+  ControlMaster no
+ 
+Host github.int.yammer.com
+  ControlMaster no
+ 
+# Do to an SSH Bug on the version used on the Jumphost, to make this work we
+# need to ssh into the jumphost first
+#
+#   ssh jumphost
+#
+# close the connection, which will remain as it is persisted for 3h and then
+# ssh into any box using the jumphost
+#
+#   ssh stagefetch-1.az1.bl2.yammer.com
+#
+# Otherwise we receive a `Bad packet length 1397966893.` see
+# https://groups.google.com/forum/#!topic/mailing.unix.openssh-dev/4Dc6LNnmA90
+Host jumphost
+  User ryokota
+  ProxyCommand none
+  ForwardAgent yes
+  Hostname jumphost.bl2.yammer.com
+ 
+Host *.dm2.yammer.com
+  User ryokota
+  ForwardAgent yes
+  ProxyCommand ssh -q -t -t jumphost nc %h %p
+ 
+Host *.bl2.yammer.com
+  User ryokota
+  ForwardAgent yes
+  ProxyCommand ssh -q -t -t jumphost nc %h %p
