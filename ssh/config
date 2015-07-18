@@ -2,8 +2,8 @@ Compression yes
  
 # Allow connection sharing for faster login
 ControlMaster auto
-ControlPersist 4h
-ControlPath /tmp/ssh_%h_%p_%r
+ControlPersist 8h
+ControlPath ~/.ssh/mux-%r@%h:%p
  
 Host github.com
   ControlMaster no
@@ -29,6 +29,12 @@ Host jumphost
   ForwardAgent yes
   Hostname jumphost.bl2.yammer.com
  
+Host jumphost2
+  User ryokota
+  ProxyCommand none
+  ForwardAgent yes
+  Hostname jumphost.dm2.yammer.com
+
 Host *.dm2.yammer.com
   User ryokota
   ForwardAgent yes
