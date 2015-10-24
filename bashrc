@@ -20,11 +20,12 @@ alias mv='mv -i'
 alias rmi='rm -i'
 alias h='history'
 alias psa='ps auxwww'
-alias jumpssh='ssh -A -t jumphost.bl2.yammer.com ssh -A $@' 
-alias jumppdsh='ssh -A -t jumphost.bl2.yammer.com pdsh $@' 
+alias jumpssh='ssh -A -t jumphost.dm2.yammer.com ssh -A $@' 
+alias jumppdsh='ssh -A -t jumphost.dm2.yammer.com pdsh $@' 
 alias mvnv='mvn versions:display-plugin-updates versions:display-dependency-updates'
 alias json_pp='json_xs -f json -t json-pretty'
 alias isodate='date -u +"%Y-%m-%dT%H:%M:%SZ"'
+alias isodate2='date -u +"%Y-%m-%dT%H_%M_%SZ"'
 
 shopt -s histappend
 HISTFILESIZE=1000000
@@ -108,42 +109,31 @@ export MAVEN_OPTS=-Xmx512m
 export GOROOT="/usr/local/go"
 export GOPATH="$HOME/gocode"
 export SBCL_HOME="/usr/local/lib/sbcl"
-export HADOOP_HOME="$HOME/third-party/hadoop/hadoop-2.5.0-src/hadoop-dist/target/hadoop-2.5.0"
-#export HBASE_HOME="$HOME/third-party/hbase/hbase-1.1.1/hbase"
-export HBASE_HOME="$HOME/third-party/hbase/hbase-0.98.5/hbase"
+export HADOOP_HOME="$HOME/third-party/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
+export HBASE_HOME="$HOME/third-party/hbase/hbase-1.1.1/hbase"
 export HIVE_HOME="$HOME/third-party/hive/packaging/target/apache-hive-1.2.0-SNAPSHOT-bin/apache-hive-1.2.0-SNAPSHOT-bin"
 
-complete -F get_dropwizard_commands dropwizard
-get_dropwizard_commands () {
-    if [ -z $2 ] ; then
-        COMPREPLY=(`dropwizard help -c`)
-    else
-        COMPREPLY=(`dropwizard help -c $2`)
-    fi
-}
-
-export PATH="${PATH}:/usr/local/sbin"
-export PATH="/Library/PostgreSQL/9.1/bin:${PATH}"
 export PATH="${PATH}:/Applications/IntelliJ\ IDEA\ 11.app/Contents/MacOS"
 export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
 export PATH="${PATH}:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
 export PATH="${PATH}:/Library/Haskell/bin"
-export PATH="${PATH}:~/code/dropwizard-gen/bin"
-export PATH="${PATH}:~/third-party/db-derby-10.10.1.1-bin/bin"
-export PATH="${PATH}:$HOME/.local/lib/aws/bin"
-export PATH="${PATH}:$GOPATH/bin"
-export PATH="${PATH}:$HOME/.shelly/bin"
 export PATH="${PATH}:/usr/local/php5/bin"
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/mysql/bin:$PATH"
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="$HOME/.rvm/bin:${PATH}" # Add RVM to PATH for scripting
-export PATH="/Applications/Vagrant/bin:${PATH}"
-export PATH="/usr/local/Cellar/protobuf/2.5.0/bin:${PATH}"
+export PATH="${PATH}:$GOPATH/bin"
+export PATH="${PATH}:$HOME/.local/lib/aws/bin"
+export PATH="${PATH}:$HOME/.shelly/bin"
+export PATH="${PATH}:$HOME/third-party/db-derby-10.10.1.1-bin/bin"
 export PATH="$HOME/third-party/scala-2.11.5/bin:${PATH}"
 export PATH="$HOME/third-party/dart/dart-sdk/bin:${PATH}"
+export PATH="$HOME/.rvm/bin:${PATH}" # Add RVM to PATH for scripting
+export PATH="/Applications/Vagrant/bin:${PATH}"
+export PATH="/Library/PostgreSQL/9.1/bin:${PATH}"
+export PATH="/usr/local/mysql/bin:${PATH}"
+export PATH="/usr/local/heroku/bin:${PATH"}
+export PATH="/usr/local/Cellar/protobuf/2.5.0/bin:${PATH}"
+export PATH="/usr/local/sbin:${PATH}"
+export PATH="/usr/local/bin:${PATH}"
 
-source ~/perl5/perlbrew/etc/bashrc
+source $HOME/perl5/perlbrew/etc/bashrc
 
 # OPAM configuration
 . $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
