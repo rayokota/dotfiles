@@ -112,6 +112,7 @@ export SBCL_HOME="/usr/local/lib/sbcl"
 export HADOOP_HOME="$HOME/third-party/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
 export HBASE_HOME="$HOME/third-party/hbase/hbase-1.1.1/hbase"
 export HIVE_HOME="$HOME/third-party/hive/packaging/target/apache-hive-1.2.0-SNAPSHOT-bin/apache-hive-1.2.0-SNAPSHOT-bin"
+export SDKMAN_DIR="/Users/ryokota/.sdkman" && source "/Users/ryokota/.sdkman/bin/sdkman-init.sh"
 
 export PATH="${PATH}:/Applications/IntelliJ\ IDEA\ 11.app/Contents/MacOS"
 export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
@@ -138,5 +139,9 @@ source $HOME/perl5/perlbrew/etc/bashrc
 # OPAM configuration
 . $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export NVM_DIR="/Users/ryokota/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
