@@ -122,9 +122,6 @@ export PATH="${PATH}:$GOPATH/bin"
 export PATH="${PATH}:$HOME/.local/lib/aws/bin"
 export PATH="${PATH}:$HOME/.shelly/bin"
 export PATH="${PATH}:$HOME/third-party/db-derby-10.10.1.1-bin/bin"
-export PATH="$HOME/third-party/scala-2.11.5/bin:${PATH}"
-export PATH="$HOME/third-party/dart/dart-sdk/bin:${PATH}"
-export PATH="$HOME/.rvm/bin:${PATH}" # Add RVM to PATH for scripting
 export PATH="/Applications/Vagrant/bin:${PATH}"
 export PATH="/Library/PostgreSQL/9.1/bin:${PATH}"
 export PATH="/usr/local/mysql/bin:${PATH}"
@@ -132,6 +129,10 @@ export PATH="/usr/local/heroku/bin:${PATH}"
 export PATH="/usr/local/Cellar/protobuf/2.5.0/bin:${PATH}"
 export PATH="/usr/local/sbin:${PATH}"
 export PATH="/usr/local/bin:${PATH}"
+export PATH="$HOME/third-party/scala-2.11.5/bin:${PATH}"
+export PATH="$HOME/third-party/dart/dart-sdk/bin:${PATH}"
+export PATH="$HOME/.rvm/bin:${PATH}" # Add RVM to PATH for scripting
+export PATH="$HOME/.yarn/bin:$PATH"
 
 source $HOME/perl5/perlbrew/etc/bashrc
 
