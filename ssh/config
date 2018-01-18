@@ -7,9 +7,11 @@ ControlPath ~/.ssh/mux-%r@%h:%p
  
 Host github.com
   ControlMaster no
- 
-Host github.int.yammer.com
-  ControlMaster no
+
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
  
 # Do to an SSH Bug on the version used on the Jumphost, to make this work we
 # need to ssh into the jumphost first
