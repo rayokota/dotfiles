@@ -112,7 +112,6 @@ export SBCL_HOME="/usr/local/lib/sbcl"
 export HADOOP_HOME="$HOME/third-party/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
 export HBASE_HOME="$HOME/third-party/hbase/hbase-1.1.1/hbase"
 export HIVE_HOME="$HOME/third-party/hive/packaging/target/apache-hive-1.2.0-SNAPSHOT-bin/apache-hive-1.2.0-SNAPSHOT-bin"
-export SDKMAN_DIR="/Users/ryokota/.sdkman" && source "/Users/ryokota/.sdkman/bin/sdkman-init.sh"
 
 export PATH="${PATH}:/Applications/IntelliJ\ IDEA\ 11.app/Contents/MacOS"
 export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
@@ -135,7 +134,5 @@ export PATH="$HOME/third-party/scala-2.11.5/bin:${PATH}"
 export PATH="$HOME/third-party/dart/dart-sdk/bin:${PATH}"
 export PATH="$HOME/.rvm/bin:${PATH}" # Add RVM to PATH for scripting
 export PATH="$HOME/.yarn/bin:$PATH"
-
-source $HOME/perl5/perlbrew/etc/bashrc
 
 # See .bashrc for end of file configs
