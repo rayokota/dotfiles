@@ -11,6 +11,7 @@
 [core]
 	editor = vim
 	excludesfile = /Users/ryokota/.gitignore_global
+	ignorecase = false
 [merge]
 	tool = diffmerge
 [difftool "sourcetree"]
@@ -27,3 +28,5 @@
 	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
 	trustExitCode = true
 [credential]
+[push]
+	default = nothing
