@@ -133,6 +133,7 @@ export PATH="/usr/local/bin:${PATH}"
 export PATH="$HOME/thirdparty/nim-0.16.0/bin:${PATH}"
 export PATH="$HOME/thirdparty/scala-2.11.5/bin:${PATH}"
 export PATH="$HOME/thirdparty/dart/dart-sdk/bin:${PATH}"
+export PATH="$HOME/thirdparty/confluent-4.0.0/bin:${PATH}"
 export PATH="$HOME/.rvm/bin:${PATH}" # Add RVM to PATH for scripting
 export PATH="$HOME/.yarn/bin:$PATH"
 
