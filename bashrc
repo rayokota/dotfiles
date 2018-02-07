@@ -101,8 +101,8 @@ PS1='\033]0;${title}\u@\h:`tty`>${mydir}\007\n\
 \[${GREY}\])\[${GREEN}\]\
 \[${GREEN}\]$\[${GREEN}\] '
 
-#export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+#export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export PYTHONPATH=
 export JRUBY_OPTS="--1.9"
 export MAVEN_OPTS=-Xmx512m
