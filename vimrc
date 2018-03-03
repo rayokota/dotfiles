@@ -155,3 +155,7 @@ map <leader>jt <Esc>:%!json_xs -f json -t json-pretty<CR>
 
 "------------------------------------------------------------
 set t_Co=256
+
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n> tnoremap <C-v><Esc> <Esc>
+endif
