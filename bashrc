@@ -125,4 +125,4 @@ export PATH="/usr/local/sbin:${PATH}"
 export PATH="/usr/local/bin:${PATH}"
 export PATH="$CONFLUENT_HOME/bin:${PATH}"
 
-# See .bashrc for end of file configs
+# See .bash_profile for end of file configs
