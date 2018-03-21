@@ -108,8 +108,9 @@ export GOPATH="$HOME/go"
 export HADOOP_HOME="$HOME/thirdparty/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
 export HBASE_HOME="$HOME/thirdparty/hbase/hbase-1.1.1/hbase"
 export CONFLUENT_HOME="$HOME/thirdparty/confluent-4.0.0"
+export CONFLUENT_CURRENT=
 #export CONFLUENT_HOME="$HOME/thirdparty/confluent-4.1.0-SNAPSHOT"
-export CONFLUENT_CURRENT="$CONFLUENT_HOME/var"
+#export CONFLUENT_CURRENT="$CONFLUENT_HOME/var"
 
 export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
 export PATH="${PATH}:/Library/Frameworks/JRuby.framework/Versions/Current/bin"

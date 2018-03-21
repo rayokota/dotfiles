@@ -7,6 +7,7 @@
 	branch = auto
 [alias]
 	co = checkout
+	g = grep --break --heading --line-number
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
         staged = diff --cached
         unstage = reset HEAD --
@@ -14,21 +15,8 @@
 	editor = vim
 	excludesfile = /Users/ryokota/.gitignore_global
 	ignorecase = false
-[merge]
-	tool = diffmerge
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[diff]
-	tool = diffmerge
-[difftool "diffmerge"]
-	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
-[mergetool "diffmerge"]
-	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
-	trustExitCode = true
-[credential]
 [push]
 	default = nothing
+[grep]
+	lineNumber = true
+	extendRegexp = true
