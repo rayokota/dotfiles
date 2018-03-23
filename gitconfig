@@ -1,23 +1,28 @@
-[user]
-	name = Robert Yokota
-	email = rayokota@gmail.com
-[color]
-	diff = auto
-	status = auto
-	branch = auto
 [alias]
 	co = checkout
+	d = difftool
 	g = grep --break --heading --line-number
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
         s = status -s
         staged = diff --cached
         unstage = reset HEAD --
+[color]
+	diff = auto
+	status = auto
+	branch = auto
 [core]
 	editor = vim
 	excludesfile = /Users/ryokota/.gitignore_global
 	ignorecase = false
-[push]
-	default = nothing
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
 [grep]
 	lineNumber = true
 	extendRegexp = true
+[push]
+	default = nothing
+[user]
+	name = Robert Yokota
+	email = rayokota@gmail.com
