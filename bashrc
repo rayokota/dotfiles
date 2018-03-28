@@ -126,4 +126,9 @@ export PATH="/usr/local/sbin:${PATH}"
 export PATH="/usr/local/bin:${PATH}"
 export PATH="$CONFLUENT_HOME/bin:${PATH}"
 
-# See .bash_profile for end of file configs
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export NVM_DIR="/Users/ryokota/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+source ~/.git-completion.bash
