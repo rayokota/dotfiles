@@ -7,8 +7,7 @@
         staged = diff --cached
         unstage = reset HEAD --
         days = "!days() { git log --pretty=format:%cd --date=short | uniq; }; days"
-        stat = "!stat() { echo -n Number of revisions:; git log --oneline | wc -l; echo -n Number of developers:; git shortlog -s | wc -l; echo -n Number of days:; git days | wc -l; echo -n Number of files in the working dir:; git ls-files | wc -l; }; stat"
-
+        stat = "!stat() { echo -n Number of revisions:; git log --oneline | wc -l; echo -n Number of developers:; git shortlog -s | wc -l; echo -n Number of days:; git days | wc -l; echo -n The git directory:; gd=$(du -s .git | awk '{ print $1 }'); echo $gd | awk '{ split( \"KB MB GB\" , v ); s=1; while( $1>1024 ){ $1/=1024; s++ } printf \"%8s\\n\", int($1) v[s] }'; echo -n The Working directory:; wd=$(du -s | awk '{ print $1 }'); echo \"$(($wd-$gd))\" | awk '{ split( \"KB MB GB\" , v ); s=1; while( $1>1024 ){ $1/=1024; s++ } printf \"%8s\\n\", int($1) v[s] }'; echo -n Number of files in the working dir:; git ls-files | wc -l; }; stat"
 [color]
 	diff = auto
 	status = auto
