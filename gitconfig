@@ -3,9 +3,12 @@
 	d = difftool
 	g = grep --break --heading --line-number
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-        s = status -s
+        s = status -sb
         staged = diff --cached
         unstage = reset HEAD --
+        days = "!days() { git log --pretty=format:%cd --date=short | uniq; }; days"
+        stat = "!stat() { echo -n Number of revisions:; git log --oneline | wc -l; echo -n Number of developers:; git shortlog -s | wc -l; echo -n Number of days:; git days | wc -l; echo -n Number of files in the working dir:; git ls-files | wc -l; }; stat"
+
 [color]
 	diff = auto
 	status = auto
