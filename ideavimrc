@@ -1,0 +1,71 @@
+let mapleader=' '
+
+set hlsearch
+set incsearch
+set showmode
+set number
+set scrolloff=3
+set history=100000
+set clipboard=unnamed
+
+" Redo
+nnoremap U <C-r>
+
+" Yank to the end of line
+nnoremap Y y$
+
+" Window operation
+nnoremap <Leader>w <C-W>w
+nnoremap <Leader>d <C-W>c
+nnoremap <Leader>j <C-W>j
+nnoremap <Leader>k <C-W>k
+nnoremap <Leader>h <C-W>h
+nnoremap <Leader>l <C-W>l
+nnoremap <Leader>- <C-W>s
+nnoremap <Leader>\| <C-W>v
+
+" ==================================================
+" Show all the provided actions via `:actionlist`
+" ==================================================
+
+nnoremap <Leader>b :action Back<CR>
+nnoremap <Leader>f :action Forward<CR>
+
+nnoremap <Leader>;; :action CommentByLineComment<CR>
+
+nnoremap <Leader>bb :action ToggleLineBreakpoint<CR>
+nnoremap <Leader>br :action ViewBreakpoints<CR>
+
+nnoremap <Leader>cv :action ChangeView<CR>
+
+nnoremap <Leader>cd :action ChooseDebugConfiguration<CR>
+
+nnoremap <Leader>ga :action GotoAction<CR>
+nnoremap <Leader>gc :action GotoClass<CR>
+nnoremap <Leader>gd :action GotoDeclaration<CR>
+nnoremap <Leader>gf :action GotoFile<CR>
+nnoremap <Leader>gi :action GotoImplementation<CR>
+nnoremap <Leader>gs :action GotoSymbol<CR>
+nnoremap <Leader>gt :action GotoTest<CR>
+
+nnoremap <Leader>fp :action ShowFilePath<CR>
+nnoremap <Leader>fu :action FindUsages<CR>
+
+nnoremap <Leader>ic :action InspectCode<CR>
+
+nnoremap <Leader>mv :action ActivateMavenProjectsToolWindow<CR>
+
+nnoremap <Leader>oi :action OptimizeImports<CR>
+
+nnoremap <Leader>pm :action ShowPopupMenu<CR>
+
+nnoremap <Leader>rc :action ChooseRunConfiguration<CR>
+nnoremap <Leader>re :action RenameElement<CR>
+nnoremap <Leader>rf :action RenameFile<CR>
+
+nnoremap <Leader>se :action SearchEverywhere<CR>
+nnoremap <Leader>su :action ShowUsages<CR>
+
+nnoremap <Leader>tc  :action CloseActiveTab<CR>
+nnoremap <Leader>tl Vy<CR>:action ActivateTerminalToolWindow<CR>
+vnoremap <Leader>tl y<CR>:action ActivateTerminalToolWindow<CR>
