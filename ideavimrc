@@ -28,9 +28,6 @@ nnoremap <Leader>\| <C-W>v
 " Show all the provided actions via `:actionlist`
 " ==================================================
 
-nnoremap <Leader>b :action Back<CR>
-nnoremap <Leader>f :action Forward<CR>
-
 nnoremap <Leader>;; :action CommentByLineComment<CR>
 
 nnoremap <Leader>bb :action ToggleLineBreakpoint<CR>
