@@ -28,6 +28,11 @@ nnoremap <Leader>\| <C-W>v
 " Show all the provided actions via `:actionlist`
 " ==================================================
 
+nnoremap <C-.> :action GotoDeclaration<CR>
+nnoremap <A-.> :action GotoImplementation<CR>
+nnoremap <C-,> :action Back<CR>
+nnoremap <C-/> :action ShowUsages<CR>
+
 nnoremap <Leader>;; :action CommentByLineComment<CR>
 
 nnoremap <Leader>bb :action ToggleLineBreakpoint<CR>
