@@ -49,9 +49,12 @@ nnoremap <Leader>gc :action GotoClass<CR>
 nnoremap <Leader>gd :action GotoDeclaration<CR>
 nnoremap <Leader>gf :action GotoFile<CR>
 nnoremap <Leader>gi :action GotoImplementation<CR>
+nnoremap <Leader>gp :action SelectInProjectView<CR>
+nnoremap <Leader>gr :action GotoRelated<CR>
 nnoremap <Leader>gs :action GotoSymbol<CR>
 nnoremap <Leader>gt :action GotoTest<CR>
 
+nnoremap <Leader>ff :action FindInPath<CR>
 nnoremap <Leader>fp :action ShowFilePath<CR>
 nnoremap <Leader>fu :action FindUsages<CR>
 
@@ -73,3 +76,6 @@ nnoremap <Leader>su :action ShowUsages<CR>
 nnoremap <Leader>tc  :action CloseActiveTab<CR>
 nnoremap <Leader>tl Vy<CR>:action ActivateTerminalToolWindow<CR>
 vnoremap <Leader>tl y<CR>:action ActivateTerminalToolWindow<CR>
+
+nnoremap ]e :action GotoNextError<CR>
+nnoremap [e :action GotoPreviousError<CR>
