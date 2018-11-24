@@ -109,6 +109,17 @@ export HBASE_HOME="$HOME/thirdparty/hbase/hbase-1.1.1/hbase"
 export CONFLUENT_HOME="$HOME/thirdparty/confluent-5.1.0-SNAPSHOT"
 export CONFLUENT_CURRENT=
 
+# prevent tmux from triggering the path to be updated with duplicate items
+if [[ -z $TMUX ]]; then
+  # Always add to end of PATH (safer)
+  export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
+  export PATH="${PATH}:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
+  export PATH="${PATH}:/Library/Haskell/bin"
+  export PATH="${PATH}:$GOROOT/bin:$GOPATH/bin"
+  export PATH="${PATH}:$HOME/.local/lib/aws/bin"
+  export PATH="${PATH}:$CONFLUENT_HOME/bin"
+fi
+
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"  # This loads nvm
