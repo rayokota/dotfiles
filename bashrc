@@ -98,7 +98,6 @@ PS1='\033]0;${title}\u@\h:`tty`>${mydir}\007\n\
 \[${GREY}\])\[${GREEN}\]\
 \[${GREEN}\]$\[${GREEN}\] '
 
-#export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export PYTHONPATH=
 export JRUBY_OPTS="--1.9"
@@ -107,26 +106,25 @@ export GOROOT="/usr/local/opt/go/libexec"
 export GOPATH="$HOME/go"
 export HADOOP_HOME="$HOME/thirdparty/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
 export HBASE_HOME="$HOME/thirdparty/hbase/hbase-1.1.1/hbase"
-export CONFLUENT_HOME="$HOME/thirdparty/confluent-5.0.0"
+export CONFLUENT_HOME="$HOME/thirdparty/confluent-5.1.0-SNAPSHOT"
 export CONFLUENT_CURRENT=
-#export CONFLUENT_HOME="$HOME/thirdparty/confluent-4.1.0-SNAPSHOT"
-#export CONFLUENT_CURRENT="$CONFLUENT_HOME/var"
 
+# Always add to end of PATH (safer)
 export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
 export PATH="${PATH}:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
 export PATH="${PATH}:/Library/Haskell/bin"
 export PATH="${PATH}:/usr/local/opt/go/libexec/bin"
 export PATH="${PATH}:$GOROOT/bin:$GOPATH/bin"
+export PATH="${PATH}:$CONFLUENT_HOME/bin"
 export PATH="${PATH}:$HOME/.local/lib/aws/bin"
-export PATH="${PATH}:$HOME/thirdparty/db-derby-10.10.1.1-bin/bin"
-export PATH="/usr/local/mysql/bin:${PATH}"
-export PATH="/usr/local/heroku/bin:${PATH}"
-export PATH="/usr/local/sbin:${PATH}"
-export PATH="/usr/local/bin:${PATH}"
-export PATH="$CONFLUENT_HOME/bin:${PATH}"
 
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"  # This loads nvm
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ryokota/thirdparty/google-cloud-sdk/path.bash.inc' ]; then . '/Users/ryokota/thirdparty/google-cloud-sdk/path.bash.inc'; fi
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ryokota/thirdparty/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/ryokota/thirdparty/google-cloud-sdk/completion.bash.inc'; fi
 
 source ~/.git-completion.bash
