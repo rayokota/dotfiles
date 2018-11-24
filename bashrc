@@ -113,10 +113,9 @@ export CONFLUENT_CURRENT=
 export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
 export PATH="${PATH}:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
 export PATH="${PATH}:/Library/Haskell/bin"
-export PATH="${PATH}:/usr/local/opt/go/libexec/bin"
 export PATH="${PATH}:$GOROOT/bin:$GOPATH/bin"
-export PATH="${PATH}:$CONFLUENT_HOME/bin"
 export PATH="${PATH}:$HOME/.local/lib/aws/bin"
+export PATH="${PATH}:$CONFLUENT_HOME/bin"
 
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
