@@ -25,10 +25,12 @@ alias isodate='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 alias isodate2='date -u +"%Y-%m-%dT%H_%M_%SZ"'
 
 shopt -s histappend
-HISTFILESIZE=1000000
-HISTSIZE=10000000
-HISTCONTROL=ignoreboth
-HISTIGNORE='ls:bg:fg:history'
+history -a # record each line as it gets issued
+HISTSIZE=500000
+HISTFILESIZE=100000
+HISTCONTROL="erasedups:ignoreboth" # avoid duplicate entries
+HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history" # don't record some commands
+HISTTIMEFORMAT='%F %T ' # useful timestamp format
 
 ssht() {
   ssh $* -t 'tmux a || tmux || /bin/bash'
