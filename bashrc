@@ -117,6 +117,7 @@ if [[ -z $TMUX ]]; then
   export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
   export PATH="${PATH}:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
   export PATH="${PATH}:/Library/Haskell/bin"
+  export PATH="${PATH}:$HOME/.local/bin" # stack tool for Haskell
   export PATH="${PATH}:$GOROOT/bin:$GOPATH/bin"
   export PATH="${PATH}:$HOME/.local/lib/aws/bin"
   export PATH="${PATH}:$CONFLUENT_HOME/bin"
