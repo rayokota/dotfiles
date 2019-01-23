@@ -123,6 +123,8 @@ if [[ -z $TMUX ]]; then
   export PATH="${PATH}:$CONFLUENT_HOME/bin"
 fi
 
+eval "$(goenv init -)"
+
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
