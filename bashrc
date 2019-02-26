@@ -104,7 +104,6 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export PYTHONPATH=
 export JRUBY_OPTS="--1.9"
 export MAVEN_OPTS=-Xmx512m
-export GOROOT="/usr/local/opt/go/libexec"
 export GOPATH="$HOME/go"
 export HADOOP_HOME="$HOME/thirdparty/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
 export HBASE_HOME="$HOME/thirdparty/hbase/hbase-1.1.1/hbase"
@@ -118,7 +117,7 @@ if [[ -z $TMUX ]]; then
   export PATH="${PATH}:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
   export PATH="${PATH}:/Library/Haskell/bin"
   export PATH="${PATH}:$HOME/.local/bin" # stack tool for Haskell
-  export PATH="${PATH}:$GOROOT/bin:$GOPATH/bin"
+  export PATH="${PATH}:$GOPATH/bin"
   export PATH="${PATH}:$HOME/.local/lib/aws/bin"
   export PATH="${PATH}:$CONFLUENT_HOME/bin"
 fi
@@ -129,10 +128,5 @@ eval "$(goenv init -)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ryokota/thirdparty/google-cloud-sdk/path.bash.inc' ]; then . '/Users/ryokota/thirdparty/google-cloud-sdk/path.bash.inc'; fi
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/ryokota/thirdparty/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/ryokota/thirdparty/google-cloud-sdk/completion.bash.inc'; fi
 
 source ~/.git-completion.bash
