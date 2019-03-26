@@ -105,8 +105,10 @@ export PYTHONPATH=
 export JRUBY_OPTS="--1.9"
 export MAVEN_OPTS=-Xmx512m
 export GOPATH="$HOME/go"
+export GO111MODULE=on
 export HADOOP_HOME="$HOME/thirdparty/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
 export HBASE_HOME="$HOME/thirdparty/hbase/hbase-1.1.1/hbase"
+export KUBE_EDITOR=vim
 export CONFLUENT_HOME="$HOME/thirdparty/confluent-5.1.0-SNAPSHOT"
 export CONFLUENT_CURRENT=
 
@@ -129,4 +131,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+source ${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh
 source ~/.git-completion.bash

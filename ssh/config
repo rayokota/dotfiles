@@ -13,6 +13,13 @@ Host *
   UseKeychain yes
   IdentityFile ~/.ssh/id_rsa
 
+Host *.cpdev.cloud *.confluent.cloud
+  User $USER
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  IdentityFile ~/.ssh/caas-%u
+  ServerAliveInterval 60
+
 Host packaging
   User ubuntu
   HostName ec2-54-226-75-200.compute-1.amazonaws.com
