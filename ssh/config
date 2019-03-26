@@ -14,7 +14,7 @@ Host *
   IdentityFile ~/.ssh/id_rsa
 
 Host *.cpdev.cloud *.confluent.cloud
-  User $USER
+  User ryokota
   StrictHostKeyChecking no
   UserKnownHostsFile /dev/null
   IdentityFile ~/.ssh/caas-%u
