@@ -153,6 +153,13 @@ nnoremap <C-L> :nohl<CR><C-L>
 "------------------------------------------------------------
 set t_Co=256
 
+"The Leader
+let mapleader="\<Space>"
+
+"netrw
+let g:netrw_banner=0
+nnoremap <leader>n :Lexplore<CR>
+
 if has('nvim')
   tnoremap <Esc> <C-\><C-n> tnoremap <C-v><Esc> <Esc>
 endif
