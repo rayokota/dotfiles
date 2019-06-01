@@ -151,9 +151,12 @@ map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
 
 "------------------------------------------------------------
+
+
+" Enable 256 colors
 set t_Co=256
 
-"The Leader
+" The Leader
 let mapleader="\<Space>"
 
 " Window operation
@@ -166,7 +169,7 @@ nnoremap <Leader>l <C-W>l
 nnoremap <Leader>- <C-W>s
 nnoremap <Leader>\| <C-W>v
 
-"netrw
+" netrw
 let g:netrw_banner=0
 nnoremap <leader>n :Lexplore<CR>
 
