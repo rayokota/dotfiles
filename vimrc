@@ -156,6 +156,16 @@ set t_Co=256
 "The Leader
 let mapleader="\<Space>"
 
+" Window operation
+nnoremap <Leader>w <C-W>w
+nnoremap <Leader>d <C-W>c
+nnoremap <Leader>j <C-W>j
+nnoremap <Leader>k <C-W>k
+nnoremap <Leader>h <C-W>h
+nnoremap <Leader>l <C-W>l
+nnoremap <Leader>- <C-W>s
+nnoremap <Leader>\| <C-W>v
+
 "netrw
 let g:netrw_banner=0
 nnoremap <leader>n :Lexplore<CR>
