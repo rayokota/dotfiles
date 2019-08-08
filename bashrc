@@ -109,7 +109,7 @@ export GO111MODULE=on
 export HADOOP_HOME="$HOME/thirdparty/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
 export HBASE_HOME="$HOME/thirdparty/hbase/hbase-1.1.1/hbase"
 export KUBE_EDITOR=vim
-export CONFLUENT_HOME="$HOME/thirdparty/confluent-5.1.0-SNAPSHOT"
+export CONFLUENT_HOME="$HOME/thirdparty/confluent-5.3.1-SNAPSHOT"
 export CONFLUENT_CURRENT=
 
 # prevent tmux from triggering the path to be updated with duplicate items
@@ -120,6 +120,7 @@ if [[ -z $TMUX ]]; then
   export PATH="${PATH}:/Library/Haskell/bin"
   export PATH="${PATH}:$HOME/.local/bin" # stack tool for Haskell
   export PATH="${PATH}:$GOPATH/bin"
+  export PATH="${PATH}/.cargo/bin"
   export PATH="${PATH}:$HOME/.local/lib/aws/bin"
   export PATH="${PATH}:$CONFLUENT_HOME/bin"
 fi
