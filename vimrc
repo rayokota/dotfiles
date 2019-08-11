@@ -157,6 +157,10 @@ source ~/.vimrc.keymap
 " Enable 256 colors
 set t_Co=256
 
+" Enable persistent undo.
+set undofile
+set undodir=$HOME/.vim/undodir
+
 " netrw
 let g:netrw_banner=0
 nnoremap <leader>n :Lexplore<CR>
