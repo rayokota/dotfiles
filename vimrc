@@ -156,6 +156,10 @@ nnoremap <C-L> :nohl<CR><C-L>
 " Enable 256 colors
 set t_Co=256
 
+" URL: https://vim.fandom.com/wiki/Avoid_the_escape_key
+" To undo, use :iunmap `
+inoremap ` <Esc>
+
 " The Leader
 let mapleader="\<Space>"
 
