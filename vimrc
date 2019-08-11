@@ -141,37 +141,21 @@ autocmd FileType javascript,ruby setlocal shiftwidth=2 softtabstop=2 expandtab
 " Mappings {{{1
 "
 " Useful mappings
+source ~/.vimrc.keymap
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
-map Y y$
+"map Y y$
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
-nnoremap <C-L> :nohl<CR><C-L>
+"nnoremap <C-L> :nohl<CR><C-L>
 
 "------------------------------------------------------------
 
 
 " Enable 256 colors
 set t_Co=256
-
-" URL: https://vim.fandom.com/wiki/Avoid_the_escape_key
-" To undo, use :iunmap `
-inoremap ` <Esc>
-
-" The Leader
-let mapleader="\<Space>"
-
-" Window operation
-nnoremap <Leader>w <C-W>w
-nnoremap <Leader>d <C-W>c
-nnoremap <Leader>j <C-W>j
-nnoremap <Leader>k <C-W>k
-nnoremap <Leader>h <C-W>h
-nnoremap <Leader>l <C-W>l
-nnoremap <Leader>- <C-W>s
-nnoremap <Leader>\| <C-W>v
 
 " netrw
 let g:netrw_banner=0

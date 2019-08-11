@@ -1,0 +1,27 @@
+" The Leader
+let mapleader="\<Space>"
+
+" URL: https://vim.fandom.com/wiki/Avoid_the_escape_key
+" To undo, use :iunmap `
+inoremap ` <Esc>
+
+" Map U to redo
+nnoremap U <C-r>
+
+" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
+" which is the default
+nnoremap Y y$
+
+" Map <C-L> (redraw screen) to also turn off search highlighting until the
+" next search
+nnoremap <C-L> :nohl<CR><C-L>
+
+" Window operation
+nnoremap <Leader>w <C-W>w
+nnoremap <Leader>d <C-W>c
+nnoremap <Leader>j <C-W>j
+nnoremap <Leader>k <C-W>k
+nnoremap <Leader>h <C-W>h
+nnoremap <Leader>l <C-W>l
+nnoremap <Leader>- <C-W>s
+nnoremap <Leader>\| <C-W>v
