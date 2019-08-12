@@ -1,6 +1,7 @@
 [include]
         path = ~/.gitconfig-user
 [alias]
+        cm = commit -m
         co = checkout
         d = difftool
         g = grep --break --heading --line-number
@@ -9,8 +10,11 @@
         s = status --short --branch
         staged = diff --cached
         unstage = reset HEAD --
-        days = "!days() { git log --pretty=format:%cd --date=short | uniq; }; days"
-        stat = "!stat() { printf 'Number of revisions:      '; git log --oneline | wc -l; printf 'Number of developers:     '; git shortlog -s | wc -l; printf 'Number of days:           '; git days | wc -l; printf 'Size of git directory:'; gd=$(du -k -s .git | awk '{ print $1 }'); printf $gd | awk '{ split( \"KB MB GB TB\" , v ); s=1; while( $1>1024 ){ $1/=1024; s++ } printf \"%12s\\n\", int($1) v[s] }'; printf 'Size of working directory:'; wd=$(du -k -s | awk '{ print $1 }'); printf \"$(($wd-$gd))\" | awk '{ split( \"KB MB GB TB\" , v ); s=1; while( $1>1024 ){ $1/=1024; s++ } printf \"%8s\\n\", int($1) v[s] }'; printf 'Num files in working dir: '; git ls-files | wc -l; }; stat"
+        days = "!f() { git log --pretty=format:%cd --date=short | uniq; }; f"
+        show-files = "!f() { git diff-tree --no-commit-id --name-only -r $1; }; f"
+        show-diff = "!f() { git diff $1^ $1; }; f"
+        show-difftool = "!f() { git difftool $1^ $1; }; f"
+        stat = "!f() { printf 'Number of revisions:      '; git log --oneline | wc -l; printf 'Number of developers:     '; git shortlog -s | wc -l; printf 'Number of days:           '; git days | wc -l; printf 'Size of git directory:'; gd=$(du -k -s .git | awk '{ print $1 }'); printf $gd | awk '{ split( \"KB MB GB TB\" , v ); s=1; while( $1>1024 ){ $1/=1024; s++ } printf \"%12s\\n\", int($1) v[s] }'; printf 'Size of working directory:'; wd=$(du -k -s | awk '{ print $1 }'); printf \"$(($wd-$gd))\" | awk '{ split( \"KB MB GB TB\" , v ); s=1; while( $1>1024 ){ $1/=1024; s++ } printf \"%8s\\n\", int($1) v[s] }'; printf 'Num files in working dir: '; git ls-files | wc -l; }; f"
 [color]
         ui = auto
 [core]
