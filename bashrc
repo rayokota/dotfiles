@@ -120,7 +120,7 @@ if [[ -z $TMUX ]]; then
   export PATH="${PATH}:/Library/Haskell/bin"
   export PATH="${PATH}:$HOME/.local/bin" # stack tool for Haskell
   export PATH="${PATH}:$GOPATH/bin"
-  export PATH="${PATH}/.cargo/bin"
+  export PATH="${PATH}:$HOME/.cargo/bin"
   export PATH="${PATH}:$HOME/.local/lib/aws/bin"
   export PATH="${PATH}:$CONFLUENT_HOME/bin"
 fi
