@@ -139,7 +139,11 @@ autocmd FileType javascript,ruby setlocal shiftwidth=2 softtabstop=2 expandtab
 
 "------------------------------------------------------------
 " Mappings {{{1
-"
+
+" Map the leader key to a spacebar
+" See Mastering Vim, by Ruslan Osipov
+let mapleader="\<Space>"
+
 " Useful mappings
 source ~/.vimrc.keymap
 

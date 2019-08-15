@@ -1,7 +1,3 @@
-" Map the leader key to a spacebar
-" See Mastering Vim, by Ruslan Osipov
-let mapleader="\<Space>"
-
 " URL: https://vim.fandom.com/wiki/Avoid_the_escape_key
 " To undo, use :iunmap `
 inoremap ` <Esc>

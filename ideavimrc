@@ -9,6 +9,10 @@ set clipboard=unnamed
 " https://youtrack.jetbrains.com/issue/VIM-1521
 set commentary
 
+" Map the leader key to a spacebar
+" See Mastering Vim, by Ruslan Osipov
+let mapleader=" "
+
 " Useful mappings
 source ~/.vimrc.keymap
 
