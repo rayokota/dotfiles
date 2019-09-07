@@ -7,6 +7,7 @@ set history=100000
 set clipboard=unnamed
 
 " https://youtrack.jetbrains.com/issue/VIM-1521
+" Use gcc, gc{motion} to comment out
 set commentary
 
 " Map the leader key to a spacebar

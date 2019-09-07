@@ -20,6 +20,10 @@ alias mv='mv -i'
 alias rmi='rm -i'
 alias h='history'
 alias psa='ps auxwww'
+alias j11="export JAVA_HOME=(/usr/libexec/java_home -v 11); java -version"
+alias j8="export JAVA_HOME=(/usr/libexec/java_home -v 1.8); java -version"
+alias j7="export JAVA_HOME=(/usr/libexec/java_home -v 1.7); java -version"
+alias jv="/usr/libexec/java_home -V"
 alias mvnv='mvn versions:display-plugin-updates versions:display-dependency-updates'
 alias isodate='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 alias isodate2='date -u +"%Y-%m-%dT%H_%M_%SZ"'
