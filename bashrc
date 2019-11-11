@@ -15,18 +15,21 @@ CYAN=$'\033[0;36m'
 WHITE=$'\033[0;37m'
 NONE=$'\033[m'
 
+alias chrome="open -a \"Google Chrome\""
+alias cl="fc -e -|pbcopy" #copy output of last command to clipboard
 alias cp='cp -i'
 alias mv='mv -i'
 alias rmi='rm -i'
 alias h='history'
 alias psa='ps auxwww'
-alias j11="export JAVA_HOME=(/usr/libexec/java_home -v 11); java -version"
-alias j8="export JAVA_HOME=(/usr/libexec/java_home -v 1.8); java -version"
-alias j7="export JAVA_HOME=(/usr/libexec/java_home -v 1.7); java -version"
+alias j11="export JAVA_HOME=$(/usr/libexec/java_home -v 11); java -version"
+alias j8="export JAVA_HOME=$(/usr/libexec/java_home -v 1.8); java -version"
+alias j7="export JAVA_HOME=$(/usr/libexec/java_home -v 1.7); java -version"
 alias jv="/usr/libexec/java_home -V"
 alias mvnv='mvn versions:display-plugin-updates versions:display-dependency-updates'
 alias isodate='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 alias isodate2='date -u +"%Y-%m-%dT%H_%M_%SZ"'
+alias v='f -e vim' # quick opening files with vim
 
 shopt -s histappend
 history -a # record each line as it gets issued
@@ -111,9 +114,9 @@ export MAVEN_OPTS=-Xmx512m
 export GOPATH="$HOME/go"
 export GO111MODULE=on
 export HADOOP_HOME="$HOME/thirdparty/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
-export HBASE_HOME="$HOME/thirdparty/hbase/hbase-1.1.1/hbase"
+export HBASE_HOME="$HOME/thirdparty/hbase-2.2.1"
 export KUBE_EDITOR=vim
-export CONFLUENT_HOME="$HOME/thirdparty/confluent-5.3.1-SNAPSHOT"
+export CONFLUENT_HOME="$HOME/thirdparty/confluent-5.3.2-SNAPSHOT"
 export CONFLUENT_CURRENT=
 
 # prevent tmux from triggering the path to be updated with duplicate items
@@ -129,6 +132,7 @@ if [[ -z $TMUX ]]; then
   export PATH="${PATH}:$CONFLUENT_HOME/bin"
 fi
 
+eval "$(fasd --init auto)"
 eval "$(goenv init -)"
 
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -136,5 +140,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+_fasd_bash_hook_cmd_complete v m j o
 source ${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh
 source ~/.git-completion.bash
