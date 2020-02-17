@@ -1,6 +1,6 @@
 " URL: https://vim.fandom.com/wiki/Avoid_the_escape_key
 " To undo, use :iunmap `
-inoremap ` <Esc>
+"inoremap ` <Esc>
 
 " Map U to redo
 nnoremap U <C-r>

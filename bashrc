@@ -118,6 +118,7 @@ export HBASE_HOME="$HOME/thirdparty/hbase-2.2.1"
 export KUBE_EDITOR=vim
 export CONFLUENT_HOME="$HOME/thirdparty/confluent-5.3.2-SNAPSHOT"
 export CONFLUENT_CURRENT=
+export OKTA_DEVICE_ID=uft11v11avhxURXHw357
 
 # prevent tmux from triggering the path to be updated with duplicate items
 if [[ -z $TMUX ]]; then

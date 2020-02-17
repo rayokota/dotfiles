@@ -7,7 +7,6 @@ set history=100000
 set clipboard=unnamed
 
 " https://youtrack.jetbrains.com/issue/VIM-1521
-" Use gcc, gc{motion} to comment out
 set commentary
 
 " Map the leader key to a spacebar
@@ -26,7 +25,7 @@ nnoremap <C-.> :action GotoDeclaration<CR>
 nnoremap <C-,> :action Back<CR>
 nnoremap <C-/> :action ShowUsages<CR>
 nnoremap <A-.> :action GotoImplementation<CR>
-nnoremap <A-,> :action GotoSuperMethod<CR>
+nnoremap <A-/> :action FindInPath<CR>
 
 nnoremap <Leader>;; :action CommentByLineComment<CR>
 
@@ -51,6 +50,7 @@ nnoremap <Leader>gp :action SelectInProjectView<CR>
 nnoremap <Leader>gr :action GotoRelated<CR>
 nnoremap <Leader>gs :action GotoSymbol<CR>
 nnoremap <Leader>gt :action GotoTest<CR>
+nnoremap <Leader>gu :action GotoSuperMethod<CR>
 
 nnoremap <Leader>ic :action InspectCode<CR>
 
