@@ -54,7 +54,8 @@ nnoremap <Leader>gu :action GotoSuperMethod<CR>
 
 nnoremap <Leader>ic :action InspectCode<CR>
 
-nnoremap <Leader>jl :action JumpToLastWindow<CR>
+nnoremap <Leader>jc :action JumpToLastChange<CR>
+nnoremap <Leader>jw :action JumpToLastWindow<CR>
 
 nnoremap <Leader>mv :action ActivateMavenProjectsToolWindow<CR>
 

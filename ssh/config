@@ -19,6 +19,7 @@ Host *.cpdev.cloud *.confluent.cloud
   UserKnownHostsFile /dev/null
   IdentityFile ~/.ssh/caas-%u
   ServerAliveInterval 60
+  ForwardAgent yes
 
 Host packaging
   User ubuntu

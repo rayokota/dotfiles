@@ -15,17 +15,18 @@ CYAN=$'\033[0;36m'
 WHITE=$'\033[0;37m'
 NONE=$'\033[m'
 
-alias chrome="open -a \"Google Chrome\""
-alias cl="fc -e -|pbcopy" #copy output of last command to clipboard
+alias ch='export CONFLUENT_HOME=$(pwd); echo $CONFLUENT_HOME'
+alias chrome='open -a "Google Chrome"'
+alias cl='fc -e -|pbcopy' #copy output of last command to clipboard
 alias cp='cp -i'
 alias mv='mv -i'
 alias rmi='rm -i'
 alias h='history'
 alias psa='ps auxwww'
-alias j11="export JAVA_HOME=$(/usr/libexec/java_home -v 11); java -version"
-alias j8="export JAVA_HOME=$(/usr/libexec/java_home -v 1.8); java -version"
-alias j7="export JAVA_HOME=$(/usr/libexec/java_home -v 1.7); java -version"
-alias jv="/usr/libexec/java_home -V"
+alias j11='export JAVA_HOME=$(/usr/libexec/java_home -v 11); java -version'
+alias j8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8); java -version'
+alias j7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7); java -version'
+alias jv='/usr/libexec/java_home -V'
 alias mvnv='mvn versions:display-plugin-updates versions:display-dependency-updates'
 alias isodate='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 alias isodate2='date -u +"%Y-%m-%dT%H_%M_%SZ"'
@@ -116,7 +117,7 @@ export GO111MODULE=on
 export HADOOP_HOME="$HOME/thirdparty/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
 export HBASE_HOME="$HOME/thirdparty/hbase-2.2.1"
 export KUBE_EDITOR=vim
-export CONFLUENT_HOME="$HOME/thirdparty/confluent-5.3.2-SNAPSHOT"
+export CONFLUENT_HOME="$HOME/thirdparty/confluent-5.4.0-beta1"
 export CONFLUENT_CURRENT=
 export OKTA_DEVICE_ID=uft11v11avhxURXHw357
 
