@@ -6,6 +6,7 @@
         d = difftool
         g = grep --break --heading --line-number
         last = log -1 HEAD
+        # Use 'git lg -p' for changed lines
         lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
         s = status --short --branch
         staged = diff --cached
