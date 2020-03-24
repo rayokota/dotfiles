@@ -9,8 +9,9 @@ Host github.com
   ControlMaster no
 
 Host *
-  AddKeysToAgent yes
+  IgnoreUnknown UseKeychain
   UseKeychain yes
+  AddKeysToAgent yes
   IdentityFile ~/.ssh/id_rsa
 
 Host *.cpdev.cloud *.confluent.cloud
