@@ -143,5 +143,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 _fasd_bash_hook_cmd_complete v m j o
-source ${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh
+[[ -s "${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh" ]] && source "${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh"
 source ~/.git-completion.bash
