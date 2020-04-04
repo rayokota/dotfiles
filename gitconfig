@@ -36,6 +36,8 @@
         extendRegexp = true
 [help]
         autocorrect = 1
+[pull]
+        rebase = true
 [push]
         default = simple
 [rerere]
