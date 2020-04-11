@@ -1,6 +1,5 @@
 tap "confluentinc/ccloud"
 tap "confluentinc/internal", "git@github.com:confluentinc/homebrew-internal.git"
-tap "homebrew/boneyard"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
