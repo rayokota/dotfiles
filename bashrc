@@ -23,10 +23,6 @@ alias mv='mv -i'
 alias rmi='rm -i'
 alias h='history'
 alias psa='ps auxwww'
-alias j11='export JAVA_HOME=$(/usr/libexec/java_home -v 11); java -version'
-alias j8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8); java -version'
-alias j7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7); java -version'
-alias jv='/usr/libexec/java_home -V'
 alias mvnv='mvn versions:display-plugin-updates versions:display-dependency-updates'
 alias isodate='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 alias isodate2='date -u +"%Y-%m-%dT%H_%M_%SZ"'
@@ -108,18 +104,17 @@ PS1='\033]0;${title}\u@\h:`tty`>${mydir}\007\n\
 \[${GREY}\])\[${GREEN}\]\
 \[${GREEN}\]$\[${GREEN}\] '
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export PYTHONPATH=
-export JRUBY_OPTS="--1.9"
-export MAVEN_OPTS=-Xmx512m
-export GOPATH="$HOME/go"
-export GO111MODULE=on
-export HADOOP_HOME="$HOME/thirdparty/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
-export HBASE_HOME="$HOME/thirdparty/hbase-2.2.1"
-export KUBE_EDITOR=vim
-export CONFLUENT_HOME="$HOME/thirdparty/confluent-5.4.0-beta1"
+export CONFLUENT_HOME="$HOME/code/thirdparty/confluent-5.4.0-beta1"
 export CONFLUENT_CURRENT=
+export GO111MODULE=on
+export GOPATH="$HOME/go"
+export HADOOP_HOME="$HOME/code/thirdparty/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
+export HBASE_HOME="$HOME/code/thirdparty/hbase-2.2.1"
+export JRUBY_OPTS="--1.9"
+export KUBE_EDITOR=vim
+export MAVEN_OPTS=-Xmx512m
 export OKTA_DEVICE_ID=uft11v11avhxURXHw357
+export PYTHONPATH=
 
 # prevent tmux from triggering the path to be updated with duplicate items
 if [[ -z $TMUX ]]; then
@@ -130,12 +125,14 @@ if [[ -z $TMUX ]]; then
   export PATH="${PATH}:$HOME/.local/bin" # stack tool for Haskell
   export PATH="${PATH}:$GOPATH/bin"
   export PATH="${PATH}:$HOME/.cargo/bin"
+  export PATH="${PATH}:$HOME/.jenv/bin"
   export PATH="${PATH}:$HOME/.local/lib/aws/bin"
   export PATH="${PATH}:$CONFLUENT_HOME/bin"
 fi
 
 eval "$(fasd --init auto)"
 eval "$(goenv init -)"
+eval "$(jenv init -)"
 
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export NVM_DIR="$HOME/.nvm"
