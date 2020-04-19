@@ -25,6 +25,8 @@ autoload -U colors && colors
 
 # History file
 export HISTFILE=~/.zsh_history
+export HISTSIZE=500000
+export SAVEHIST=100000
 
 # Don't show duplicate history entries
 setopt hist_find_no_dups
