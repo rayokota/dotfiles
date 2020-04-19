@@ -1,0 +1,97 @@
+alias ch='export CONFLUENT_HOME=$(pwd); echo $CONFLUENT_HOME'
+alias chrome='open -a "Google Chrome"'
+alias cl='fc -e -|pbcopy' #copy output of last command to clipboard
+alias cp='cp -i'
+alias mv='mv -i'
+alias rmi='rm -i'
+alias h='history'
+alias psa='ps auxwww'
+alias mvnv='mvn versions:display-plugin-updates versions:display-dependency-updates'
+alias isodate='date -u +"%Y-%m-%dT%H:%M:%SZ"'
+alias isodate2='date -u +"%Y-%m-%dT%H_%M_%SZ"'
+
+mvim() { 
+  if [[ $1 == /* ]]
+  then 
+    MacVim $1
+  else 
+    local x=$(pwd)
+    MacVim "${x}/$1" 
+  fi
+}
+
+ssht() {
+  ssh $* -t 'tmux a || tmux || /bin/bash'
+}
+
+# change xterm title
+title() {
+   if [ $# -eq 0 ]
+   then
+      title=""
+   else
+      title="$* - "
+   fi
+}
+
+# trims long paths down
+_get_path() {
+  local x=$(pwd | sed -e "s:$HOME:~:")
+  local len=${#x}
+  local max=60
+  if [ $len -gt $max ]
+  then
+      echo ...${x:((len-max+3))}
+  else
+      echo ${x}
+  fi
+}
+ 
+# Git info at prompt
+git_branch() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo ${ref#refs/heads/}
+}
+
+git_status() {
+  tmp_flags=$(git status --porcelain 2> /dev/null | cut -c1-2 | sed 's/ //g' | cut -c1 | sort | uniq)
+  echo $tmp_flags | tr -d '\n' | sed 's/ //g'
+}
+
+export EDITOR=vi
+export VISUAL=vim
+
+# prevent tmux from triggering the path to be updated with duplicate items
+if [[ -z $TMUX ]]; then
+  # Always add to end of PATH (safer)
+  export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
+  export PATH="${PATH}:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
+  export PATH="${PATH}:/Library/Haskell/bin"
+  export PATH="${PATH}:$HOME/.local/bin" # stack tool for Haskell
+  export PATH="${PATH}:$HOME/.local/lib/aws/bin"
+  export PATH="${PATH}:$HOME/.cargo/bin"
+  export PATH="${PATH}:$HOME/.jenv/bin"
+  export PATH="${PATH}:$GOPATH/bin"
+  export PATH="${PATH}:$CONFLUENT_HOME/bin"
+fi
+
+export CONFLUENT_HOME="$HOME/code/thirdparty/confluent-5.4.0-beta1"
+export CONFLUENT_CURRENT=
+export GO111MODULE=on
+export GOPATH="$HOME/go"
+export HADOOP_HOME="$HOME/code/thirdparty/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
+export HBASE_HOME="$HOME/code/thirdparty/hbase-2.2.1"
+export JRUBY_OPTS="--1.9"
+export KUBE_EDITOR=vim
+export MAVEN_OPTS=-Xmx512m
+export NVM_DIR="$HOME/.nvm"
+export OKTA_DEVICE_ID=uft11v11avhxURXHw357
+export PYTHONPATH=
+
+eval "$(goenv init -)"
+eval "$(jenv init -)"
+
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[[ -s "${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh" ]] && source "${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh"

@@ -1,9 +1,5 @@
-# Better auto-completion if shell is *i*nteractive
-#[[ $- = *i* ]] && bind TAB:menu-complete
-[[ $- = *i* ]] && bind TAB:complete
-
-EDITOR=vi
-VISUAL=vim
+# Load shared shell configuration
+source ~/.shrc
 
 GREY=$'\033[1;30m'
 RED=$'\033[0;31m'
@@ -15,130 +11,28 @@ CYAN=$'\033[0;36m'
 WHITE=$'\033[0;37m'
 NONE=$'\033[m'
 
-alias ch='export CONFLUENT_HOME=$(pwd); echo $CONFLUENT_HOME'
-alias chrome='open -a "Google Chrome"'
-alias cl='fc -e -|pbcopy' #copy output of last command to clipboard
-alias cp='cp -i'
-alias mv='mv -i'
-alias rmi='rm -i'
-alias h='history'
-alias psa='ps auxwww'
-alias mvnv='mvn versions:display-plugin-updates versions:display-dependency-updates'
-alias isodate='date -u +"%Y-%m-%dT%H:%M:%SZ"'
-alias isodate2='date -u +"%Y-%m-%dT%H_%M_%SZ"'
-alias v='f -e vim' # quick opening files with vim
-
 shopt -s histappend
 history -a # record each line as it gets issued
+HISTFILE="$HOME/.bash_history"
 HISTSIZE=500000
 HISTFILESIZE=100000
 HISTCONTROL="erasedups:ignoreboth" # avoid duplicate entries
 HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history" # don't record some commands
 HISTTIMEFORMAT='%F %T ' # useful timestamp format
 
-ssht() {
-  ssh $* -t 'tmux a || tmux || /bin/bash'
-}
-
-mvim() { 
-  if [[ $1 == /* ]]
-  then 
-    MacVim $1
-  else 
-    local x=$(pwd)
-    MacVim "${x}/$1" 
-  fi
-}
-
-# trims long paths down
-_get_path() {
-  local x=$(pwd | sed -e "s:$HOME:~:")
-  local len=${#x}
-  local max=60
-  if [ $len -gt $max ]
-  then
-      echo ...${x:((len-max+3))}
-  else
-      echo ${x}
-  fi
-}
- 
-# change xterm title
-title() {
-   if [ $# -eq 0 ]
-   then
-      title=""
-   else
-      title="$* - "
-   fi
-}
-
-# Git info at prompt
-git_branch() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo ${ref#refs/heads/}
-}
-
-git_status() {
-  # git status is slow on nfs mounts 
-  if [ `uname` == 'Linux' ]
-  then
-    [[ $(stat -f -L -c %T .) != "nfs" ]] || return
-  fi
-  tmp_flags=$(git status --porcelain 2> /dev/null | cut -c1-2 | sed 's/ //g' | cut -c1 | sort | uniq)
-  echo $tmp_flags | sed 's/ //g'
-}
-
 #executed just before prompt
 PROMPT_COMMAND='exitStatus=$?;mydir=$(_get_path);gitbr=$(git_branch);gitst=$(git_status)'
 PROMPT_COMMAND="$PROMPT_COMMAND;history -a"  # execute history after capturing exitStatus
  
 PS1='\033]0;${title}\u@\h:`tty`>${mydir}\007\n\
-\[${GREY}\]\[${CYAN}\]\A\[${GREY}\] \
+\[${GREY}\]\[${CYAN}\]\t\[${GREY}\] \
 \[${GREY}\]\[${GREEN}\]\u@\h\[${GREY}\] \
-\[${WHITE}\]${mydir} \
+\[${CYAN}\]${mydir} \
 \[${GREY}\](\
 \[${YELLOW}\]${gitbr}`if [ -n "$gitbr" ]; then echo -n "\[${GREY}\]|"; if [ -n "$gitst" ]; then echo "\[${RED}\]$gitst\[${GREY}\]|"; fi; fi`\
 \[${YELLOW}\]%\j\[${GREY}\]|\
 \[${YELLOW}\]`if [ $exitStatus -ne 0 ] ; then echo "\[${RED}\]" ; fi`${exitStatus}\
-\[${GREY}\])\[${GREEN}\]\
-\[${GREEN}\]$\[${GREEN}\] '
+\[${GREY}\])\[${GREEN}\]$ \[${WHITE}\]'
 
-export CONFLUENT_HOME="$HOME/code/thirdparty/confluent-5.4.0-beta1"
-export CONFLUENT_CURRENT=
-export GO111MODULE=on
-export GOPATH="$HOME/go"
-export HADOOP_HOME="$HOME/code/thirdparty/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
-export HBASE_HOME="$HOME/code/thirdparty/hbase-2.2.1"
-export JRUBY_OPTS="--1.9"
-export KUBE_EDITOR=vim
-export MAVEN_OPTS=-Xmx512m
-export OKTA_DEVICE_ID=uft11v11avhxURXHw357
-export PYTHONPATH=
-
-# prevent tmux from triggering the path to be updated with duplicate items
-if [[ -z $TMUX ]]; then
-  # Always add to end of PATH (safer)
-  export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
-  export PATH="${PATH}:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
-  export PATH="${PATH}:/Library/Haskell/bin"
-  export PATH="${PATH}:$HOME/.local/bin" # stack tool for Haskell
-  export PATH="${PATH}:$HOME/.local/lib/aws/bin"
-  export PATH="${PATH}:$HOME/.cargo/bin"
-  export PATH="${PATH}:$HOME/.jenv/bin"
-  export PATH="${PATH}:$GOPATH/bin"
-  export PATH="${PATH}:$CONFLUENT_HOME/bin"
-fi
-
-eval "$(fasd --init auto)"
-eval "$(goenv init -)"
-eval "$(jenv init -)"
-
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-_fasd_bash_hook_cmd_complete v m j o
-[[ -s "${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh" ]] && source "${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh"
+[[ -s /usr/local/etc/bash_completion ]] && . /usr/local/etc/bash_completion
 source ~/.git-completion.bash
