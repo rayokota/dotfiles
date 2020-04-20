@@ -28,14 +28,26 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=500000
 export SAVEHIST=100000
 
+# Expire duplicates first
+setopt hist_expire_dups_first
+
+# Don't store duplicates
+setopt hist_ignore_dups
+
 # Don't show duplicate history entries
 setopt hist_find_no_dups
 
 # Remove unnecessary blanks from history
 setopt hist_reduce_blanks
 
+# Save time info
+setopt extended_history
+
 # Share history between instances
 setopt share_history
+
+# Append to history
+setopt append_history
 
 # Don't hang up background jobs
 setopt no_hup
