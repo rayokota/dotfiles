@@ -29,7 +29,7 @@ ssht() {
 
 # change xterm title
 title() {
-   if [ $# -eq 0 ]
+   if [[ $# -eq 0 ]]
    then
       title=""
    else
@@ -42,7 +42,7 @@ _get_path() {
   local x=$(pwd | sed -e "s:$HOME:~:")
   local len=${#x}
   local max=60
-  if [ $len -gt $max ]
+  if [[ $len -gt $max ]]
   then
       echo ...${x:((len-max+3))}
   else
@@ -87,7 +87,6 @@ export HBASE_HOME="$HOME/code/thirdparty/hbase-2.2.1"
 export JRUBY_OPTS="--1.9"
 export KUBE_EDITOR="$EDITOR"
 export MAVEN_OPTS=-Xmx512m
-export NVM_DIR="$HOME/.nvm"
 export OKTA_DEVICE_ID=uft11v11avhxURXHw357
 export PYTHONPATH=
 
