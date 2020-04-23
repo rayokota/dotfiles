@@ -90,7 +90,7 @@ export PYTHONPATH=
 eval "$(goenv init -)"
 eval "$(jenv init -)"
 
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[[ -s "/usr/local/opt/nvm/nvm.sh" ]] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ]] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 [[ -s "${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh" ]] && source "${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh"
