@@ -19,6 +19,10 @@ mvim() {
   fi
 }
 
+perf() {
+  for i in $(seq 1 5); do /usr/bin/time $SHELL -i -c exit; done
+}
+
 ssht() {
   ssh $* -t 'tmux a || tmux || /bin/bash'
 }
@@ -87,10 +91,8 @@ export NVM_DIR="$HOME/.nvm"
 export OKTA_DEVICE_ID=uft11v11avhxURXHw357
 export PYTHONPATH=
 
+eval "$(fnm env --multi)"
 eval "$(goenv init -)"
 eval "$(jenv init -)"
-
-[[ -s "/usr/local/opt/nvm/nvm.sh" ]] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ]] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 [[ -s "${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh" ]] && source "${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh"
