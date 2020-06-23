@@ -81,8 +81,6 @@ fi
 
 export CONFLUENT_HOME="$HOME/code/thirdparty/confluent-5.4.0-beta1"
 export CONFLUENT_CURRENT=
-export GO111MODULE=on
-export GOPATH="$HOME/go"
 export HADOOP_HOME="$HOME/code/thirdparty/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
 export HBASE_HOME="$HOME/code/thirdparty/hbase-2.2.1"
 export JRUBY_OPTS="--1.9"
@@ -91,8 +89,14 @@ export MAVEN_OPTS=-Xmx512m
 export OKTA_DEVICE_ID=uft11v11avhxURXHw357
 export PYTHONPATH=
 
-eval "$(fnm env --multi)"
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export GOPATH=$HOME/git/go
+export PATH="$GOPATH/bin:$PATH"
+
+eval "$(fnm env --multi)"
 eval "$(jenv init -)"
 
 [[ -s "${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh" ]] && source "${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh"
