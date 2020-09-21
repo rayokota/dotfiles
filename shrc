@@ -87,6 +87,7 @@ export KUBE_EDITOR="$EDITOR"
 export MAVEN_OPTS=-Xmx512m
 export OKTA_DEVICE_ID=uft11v11avhxURXHw357
 export PYTHONPATH=
+export VAULT_ADDR=https://vault.cireops.gcp.internal.confluent.cloud
 
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"

@@ -111,6 +111,9 @@ set cmdheight=2
 " Display line numbers on the left
 set number
 
+" Add the showbreak character when line-wrapping long lines
+set showbreak=↪\ 
+
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 
