@@ -78,6 +78,9 @@ if [[ -z $TMUX ]]; then
   export PATH="${PATH}:$CONFLUENT_HOME/bin"
 fi
 
+export ANDROID_AVD_HOME=/Users/ryokota/.android/avd
+export ANDROID_HOME=/Users/ryokota/Library/Android/sdk
+export ANDROID_SDK_ROOT=/Users/ryokota/Library/Android/sdk
 export CONFLUENT_HOME="$HOME/code/thirdparty/confluent-5.4.0-beta1"
 export CONFLUENT_CURRENT=
 export HADOOP_HOME="$HOME/code/thirdparty/hadoop/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1"
@@ -95,6 +98,7 @@ eval "$(goenv init -)"
 export PATH="$GOROOT/bin:$PATH"
 export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
+export GO111MODULE=on
 
 eval "$(fnm env --multi)"
 eval "$(jenv init -)"
