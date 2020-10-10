@@ -9,6 +9,8 @@ alias isodate='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 alias isodate2='date -u +"%Y-%m-%dT%H_%M_%SZ"'
 alias mvnv='mvn versions:display-plugin-updates versions:display-dependency-updates'
 
+cpd_id() { cpd priv ls -o json --limit 1 | jq -r '.[0].Id'; }
+
 mvim() { 
   if [[ $1 == /* ]]
   then 
@@ -95,9 +97,8 @@ export VAULT_ADDR=https://vault.cireops.gcp.internal.confluent.cloud
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
-export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
 export GOPATH=$HOME/go
-export PATH="$GOPATH/bin:$PATH"
 export GO111MODULE=on
 
 eval "$(fnm env --multi)"
