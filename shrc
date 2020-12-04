@@ -89,7 +89,7 @@ export HADOOP_HOME="$HOME/code/thirdparty/hadoop/hadoop-2.7.1-src/hadoop-dist/ta
 export HBASE_HOME="$HOME/code/thirdparty/hbase-2.2.1"
 export JRUBY_OPTS="--1.9"
 export KUBE_EDITOR="$EDITOR"
-export MAVEN_OPTS=-Xmx512m
+export MAVEN_OPTS="-Xmx1024M -Xss128M -XX:MetaspaceSize=512M -XX:MaxMetaspaceSize=1024M -XX:+CMSClassUnloadingEnabled"
 export OKTA_DEVICE_ID=uft11v11avhxURXHw357
 export PYTHONPATH=
 export VAULT_ADDR=https://vault.cireops.gcp.internal.confluent.cloud
