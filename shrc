@@ -101,7 +101,7 @@ export PATH="$PATH:$GOPATH/bin"
 export GOPATH=$HOME/go
 export GO111MODULE=on
 
-# Fast node.js manager
+# Fast Node Manager
 eval "$(fnm env)"
 eval "$(jenv init -)"
 
