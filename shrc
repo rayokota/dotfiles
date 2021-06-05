@@ -102,7 +102,7 @@ export GOPATH=$HOME/go
 export GO111MODULE=on
 
 # Fast node.js manager
-eval "$(fnm envmulti)"
+eval "$(fnm env)"
 eval "$(jenv init -)"
 
 [[ -s "${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh" ]] && source "${GOPATH}/src/github.com/confluentinc/cc-dotfiles/caas.sh"
