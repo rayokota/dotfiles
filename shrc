@@ -2,6 +2,8 @@ alias ch='export CONFLUENT_HOME=$(pwd); echo $CONFLUENT_HOME'
 alias chrome='open -a "Google Chrome"'
 alias cl='fc -e -|pbcopy' #copy output of last command to clipboard
 alias cp='cp -i'
+alias halcpd='./bin/halctl --vault-token $(cat ~/.vault-token) --context cpd --vault-login-path auth/app/devel/login --vault-oidc-role halyard-devel'
+alias halprod='./bin/halctl --vault-token $(cat ~/.vault-token) --context prod --vault-login-path auth/app/prod/login --vault-oidc-role halyard-prod'
 alias mv='mv -i'
 alias rmi='rm -i'
 alias h='history'

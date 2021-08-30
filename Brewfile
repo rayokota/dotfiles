@@ -53,6 +53,7 @@ brew "minikube"
 brew "neovim"
 brew "nghttp2"
 brew "peco"
+brew "pipenv"
 brew "postgresql", restart_service: true
 brew "pssh"
 brew "python"
