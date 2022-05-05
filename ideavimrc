@@ -30,6 +30,11 @@ nmap <C-/> <Action>(ShowUsages)
 nmap <A-.> <Action>(GotoImplementation)
 nmap <A-/> <Action>(FindInPath)
 
+" SlickEdit-like bindings using Leader
+nmap <Leader>. <Action>(GotoDeclaration)
+nmap <Leader>, <Action>(Back)
+nmap <Leader>/ <Action>(ShowUsages)
+
 nmap <Leader>;; <Action>(CommentByLineComment)
 
 nmap <Leader>bb <Action>(ToggleLineBreakpoint)
