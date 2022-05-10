@@ -6,6 +6,10 @@ set scrolloff=3
 set history=100000
 set clipboard=unnamed
 
+set idearefactormode=keep
+set ideajoin
+set surround
+
 " https://youtrack.jetbrains.com/issue/VIM-1521
 set commentary
 
@@ -60,10 +64,14 @@ nmap <Leader>gs <Action>(GotoSymbol)
 nmap <Leader>gt <Action>(GotoTest)
 nmap <Leader>gu <Action>(GotoSuperMethod)
 
+nmap <Leader>h <Action>(PreviousTab)
+
 nmap <Leader>ic <Action>(InspectCode)
 
 nmap <Leader>jc <Action>(JumpToLastChange)
 nmap <Leader>jw <Action>(JumpToLastWindow)
+
+nmap <Leader>l <Action>(NextTab)
 
 nmap <Leader>mv <Action>(ActivateMavenProjectsToolWindow)
 
@@ -82,3 +90,5 @@ nmap <Leader>tc <Action>(CloseActiveTab)
 
 nmap ]e <Action>(GotoNextError)
 nmap [e <Action>(GotoPreviousError)
+
+set NERDTree
