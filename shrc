@@ -96,12 +96,14 @@ export OKTA_DEVICE_ID=uft11v11avhxURXHw357
 export PYTHONPATH=
 export VAULT_ADDR=https://vault.cireops.gcp.internal.confluent.cloud
 
+# Tell goenv where the GOPATH prefix is for all go versions
+export GOENV_GOPATH_PREFIX=$HOME/git/go
+
+# Setup and Init goenv
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
 export PATH="$PATH:$GOPATH/bin"
-export GOPATH=$HOME/go
-export GO111MODULE=on
 
 # Fast Node Manager
 eval "$(fnm env)"
