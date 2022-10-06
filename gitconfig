@@ -43,3 +43,5 @@
         default = simple
 [rerere]
         enabled = 1
+[rebase]
+	updateRefs = true
