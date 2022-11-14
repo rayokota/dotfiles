@@ -78,6 +78,7 @@ if [[ -z $TMUX ]]; then
   export PATH="${PATH}:/usr/local/opt/helm@2/bin"
   export PATH="${PATH}:$HOME/.cabal/bin"
   export PATH="${PATH}:$HOME/.cargo/bin"
+  export PATH="${PATH}:$HOME/.dotnet/tools"
   export PATH="${PATH}:$HOME/.jenv/bin"
   export PATH="${PATH}:$CONFLUENT_HOME/bin"
 fi
