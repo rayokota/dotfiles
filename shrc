@@ -1,3 +1,4 @@
+alias assume="source assume"
 alias ch='export CONFLUENT_HOME=$(pwd); echo $CONFLUENT_HOME'
 alias chrome='open -a "Google Chrome"'
 alias cl='fc -e -|pbcopy' #copy output of last command to clipboard
