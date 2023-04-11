@@ -99,7 +99,7 @@ export PYTHONPATH=
 export VAULT_ADDR=https://vault.cireops.gcp.internal.confluent.cloud
 
 # Tell goenv where the GOPATH prefix is for all go versions
-export GOENV_GOPATH_PREFIX=$HOME/git/go
+export GOENV_GOPATH_PREFIX=$HOME/go
 
 # Setup and Init goenv
 export GOENV_ROOT="$HOME/.goenv"
