@@ -163,6 +163,7 @@ source ~/.vimrc.keymap
 
 " Enable 256 colors
 set t_Co=256
+set termguicolors
 
 " Enable persistent undo.
 set undofile
