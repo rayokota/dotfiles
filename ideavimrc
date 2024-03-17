@@ -10,6 +10,7 @@ set idearefactormode=keep
 set ideajoin
 set surround
 
+" Emulate gcc and gc{motion} similar to vim-commentary or tcomment
 " https://youtrack.jetbrains.com/issue/VIM-1521
 set commentary
 
