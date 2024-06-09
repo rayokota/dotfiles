@@ -83,5 +83,3 @@ add-zsh-hook precmd gitst
 PROMPT='%F{cyan}%* %B%F{green}%n@%m%b %F{cyan}%60<...<%~ \
 %F{240}(%F{yellow}%v%F{240}%(V.|.)%F{red}%2v%F{240}%(2V.|.)%F{yellow}%%%j%F{240}|%(?.%F{yellow}%?.%F{red}%?)%F{240})\
 %B%F{green}%b%% %f'
-
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
