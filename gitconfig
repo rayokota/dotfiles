@@ -1,6 +1,7 @@
 [include]
         path = ~/.gitconfig-user
 [alias]
+        ci = commit
         cm = commit -m
         co = checkout
         d = difftool
@@ -42,6 +43,7 @@
 [pull]
         rebase = true
 [push]
+        autoSetupRemote = true
         default = simple
 [rerere]
         enabled = 1
