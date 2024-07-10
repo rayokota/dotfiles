@@ -4,6 +4,7 @@ alias cl='fc -e -|pbcopy' #copy output of last command to clipboard
 alias cp='cp -i'
 alias k='kubectl'
 alias mv='mv -i'
+alias rg='rg --hidden'
 alias rmi='rm -i'
 alias h='history'
 alias isodate='date -u +"%Y-%m-%dT%H:%M:%SZ"'
