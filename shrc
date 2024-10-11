@@ -77,6 +77,7 @@ if [[ -z $TMUX ]]; then
   export PATH="${PATH}:$HOME/.cargo/bin"
   export PATH="${PATH}:$HOME/.dotnet/tools"
   export PATH="${PATH}:$HOME/.jenv/bin"
+  export PATH="${PATH}:$HOME/.local/bin"
   export PATH="${PATH}:$CONFLUENT_HOME/bin"
 fi
 
