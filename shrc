@@ -103,7 +103,4 @@ eval "$(jenv init -)"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# Fast Node Manager
-eval "$(fnm env)"
-
 [[ -s "${HOME}/.cc-dotfiles/caas.sh" ]] && source "${HOME}/.cc-dotfiles/caas.sh"
