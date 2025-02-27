@@ -36,3 +36,4 @@ PS1='\033]0;${title}\u@\h:`tty`>${mydir}\007\n\
 
 [[ -s /usr/local/etc/bash_completion ]] && . /usr/local/etc/bash_completion
 source ~/.git-completion.bash
+. "$HOME/.cargo/env"
