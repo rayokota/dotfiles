@@ -49,3 +49,5 @@
         enabled = 1
 [rebase]
 	updateRefs = true
+[http]
+	postBuffer = 524288000
