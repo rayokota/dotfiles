@@ -73,6 +73,7 @@ if [[ -z $TMUX ]]; then
   # Always add to end of PATH (safer)
   export PATH="${PATH}:/Applications/MacVim.app/Contents/MacOS"
   export PATH="${PATH}:/Library/Haskell/bin"
+  export PATH="${PATH}:/opt/homebrew/opt/llvm/bin"
   export PATH="${PATH}:/opt/homebrew/opt/protobuf@3/bin"
   export PATH="${PATH}:$HOME/.cabal/bin"
   export PATH="${PATH}:$HOME/.cargo/bin"
