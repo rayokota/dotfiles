@@ -51,3 +51,5 @@
 	updateRefs = true
 [http]
 	postBuffer = 524288000
+[credential]
+        helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
