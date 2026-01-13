@@ -9,6 +9,7 @@
         last = log -1 HEAD
         # Use 'git lg -p' for changed lines
         lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+        pushf = push --force-with-lease
         recent = ! git branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\" | head -10
         s = status --short --branch
         staged = diff --cached
