@@ -102,6 +102,8 @@ export PATH="$GOENV_ROOT/shims:$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
 export PATH="$PATH:$GOPATH/bin"
 
+[ -s "${HOME}/.ghcup/env" ] && \. "${HOME}/.ghcup/env"
+
 eval "$(jenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
