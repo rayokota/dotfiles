@@ -5,6 +5,7 @@ set number
 set scrolloff=3
 set history=100000
 set clipboard=unnamed
+set visualbell
 
 set idearefactormode=keep
 set ideajoin
