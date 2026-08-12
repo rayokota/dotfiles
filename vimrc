@@ -20,6 +20,10 @@ set nocompatible
 " and for plugins that are filetype specific.
 filetype indent plugin on
 
+" Force the NFA regex engine. The bundled TypeScript syntax file has patterns
+" that backtrack exponentially on the old engine.
+set regexpengine=2
+
 " Enable syntax highlighting
 syntax on
 
